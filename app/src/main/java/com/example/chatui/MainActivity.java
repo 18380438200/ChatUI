@@ -8,10 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
-
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         adapter = new CommonAdapter<MsgContentBean>(getApplicationContext(),R.layout.item_chat,datas) {
             @Override
             protected void convert(ViewHolder holder, MsgContentBean msgContentBean, int position) {
-                RelativeLayout llRecieve = holder.getView(R.id.ll_receive);
-                RelativeLayout llSend = holder.getView(R.id.ll_send);
+                RelativeLayout llRecieve = holder.getView(R.id.rl_receive);
+                LinearLayout llSend = holder.getView(R.id.ll_send);
                 if(msgContentBean.getType() == 0){
                     llRecieve.setVisibility(View.GONE);
                     holder.setText(R.id.tv_msg_send,msgContentBean.getContent());
