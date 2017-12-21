@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.chatui.MainActivity"
+    android:background="#f4f4f4">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/blue_sky">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="范冰冰"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/et_input"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="35dp"
+            android:padding="2dp"
+            android:background="@drawable/shape_chat_et"/>
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:onClick="sendMsg"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/shape_chat_sendbtn"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:text="发送"/>
+    </LinearLayout>
+
+</LinearLayout>
