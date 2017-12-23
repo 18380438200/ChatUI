@@ -43,8 +43,10 @@ public class MainActivity extends AppCompatActivity {
                 LinearLayout llSend = holder.getView(R.id.ll_send);
                 if(msgContentBean.getType() == 0){
                     llRecieve.setVisibility(View.GONE);
+                    llSend.setVisibility(View.VISIBLE);
                     holder.setText(R.id.tv_msg_send,msgContentBean.getContent());
                 }else{
+                    llRecieve.setVisibility(View.VISIBLE);
                     llSend.setVisibility(View.GONE);
                     holder.setText(R.id.tv_msg_receive,msgContentBean.getContent());
                 }
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
+    //点击发送消息
     public void sendMsg(View view){
         String content = etInput.getText().toString().trim();
         datas.add(new MsgContentBean(SEND,content));
